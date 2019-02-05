@@ -27,7 +27,7 @@ class Restaurant
   end
 
   def average_star_rating
-    self.reviews.reduce(0) { |sum, review| sum + review.rating  }.to_f / self.reviews.count
+    self.reviews.reduce(0) { |sum, review| sum + review.rating }.to_f / self.reviews.count
   end
 
   def longest_review
