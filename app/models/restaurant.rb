@@ -13,7 +13,7 @@ class Restaurant
   end
 
   def self.find_by_name(name)
-    @@all.find {|restaurant| restaurant.name == name}
+    self.all.find {|restaurant| restaurant.name == name}
   end
 
   def reviews
