@@ -23,10 +23,9 @@ class Customer
   # given full name String, returns first matching Customer
   # Customer.find_by_name(String) -> Customers
   def self.find_by_name(full_name)
-    customers = self.all.select do |customer|
+    self.all.find do |customer|
       customer.full_name == full_name
     end
-    customers.first
   end
 
   # given first name String, returns array of matching Customers

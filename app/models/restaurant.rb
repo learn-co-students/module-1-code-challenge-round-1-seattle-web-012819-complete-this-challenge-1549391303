@@ -17,10 +17,9 @@ class Restaurant
   # given Restaurant name as String, return first matching Restaurant
   # Restaurant.find_by_name(String) -> Restaurant: instance
   def self.find_by_name(name)
-    restaurants = self.all.select do |restaurant|
+    self.all.find do |restaurant|
       restaurant.name == name
     end
-    restaurants.first
   end
   
   # returns array of all reviews of Restaurant instance
