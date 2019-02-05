@@ -27,6 +27,11 @@ class Restaurant
     num_of_revs = 0
     total_stars = 0
     arr = []
+    # self.reviews.each do |rev|
+    #   rev.rating += total_stars
+    #   num_of_revs += 1
+    # end
+    # total_stars/num_of_revs
     Review.all.each do |rev|
       if rev.restaurant == self
         arr << rev.rating
