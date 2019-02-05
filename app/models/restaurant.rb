@@ -46,7 +46,7 @@ class Restaurant
     reviews = self.reviews
     num_of_reviews = reviews.count
     review_total = reviews.reduce(0) { |sum, review| sum += review.rating }
-    review_total / num_of_reviews.to_f
+    (avg_rating = review_total / num_of_reviews.to_f).round(1)
   end
 
   # returns longest Review content of Restaurant instance

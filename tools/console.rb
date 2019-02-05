@@ -40,5 +40,5 @@ puts westward.longest_review
 
 puts Review.all
 
-# binding.pry
+binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
