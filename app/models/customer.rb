@@ -28,4 +28,16 @@ class Customer
   def self.all_names
     Customer.all.map { |cust| "#{cust.first_name} #{cust.last_name}"}
   end
+
+  def add_review(restaurant, content, rating)
+    Review.new(content, self, restaurant, rating)
+  end
+
+  def num_reviews
+    Review.all.count { |rev| rev.customer == self }
+  end
+
+  def restaurants
+    Review.all.each_with_object([]) { |rev, a| a << rev.restaurant if rev.customer == self }.uniq
+  end
 end
