@@ -32,8 +32,7 @@ class Customer
   end
 
   def num_reviews
-    n = Review.all.select { |rv| rv.customer == self }.length
-    !n ? 0 : n
+    Review.all.select { |rv| rv.customer == self }.length
   end
 
   def restaurants
