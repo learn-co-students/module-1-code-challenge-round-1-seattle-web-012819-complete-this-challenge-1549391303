@@ -20,6 +20,7 @@ obinna_sahal = Review.new("I've never been here. But I still have opinions.", ob
 
 nneka.add_review(sahal, "Service was abysmal.", 1)
 nneka.add_review(sahal, "Must've been an off day. Had a lovely time this go 'round.'", 3)
+corey.add_review(pizza_place, "I love pizza. But not cheese. They have amazing cheese-less pizza.", 5)
 
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
