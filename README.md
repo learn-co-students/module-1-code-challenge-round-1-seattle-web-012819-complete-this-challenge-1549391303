@@ -39,7 +39,7 @@ We've provided you with a console that you can use to test your code. To enter a
   - should return an **array** of all of the customer full names
 
 ---
-
+RE
 #### Build out the following methods on the `Restaurant` class
 
 - `Restaurant.all`
