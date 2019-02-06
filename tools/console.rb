@@ -12,7 +12,10 @@ customer2 = Customer.new("Tim", "bard")
 restaurant1 = Restaurant.new("pizza_world")
 restaurant2 = Restaurant.new("burger_world")
 
-review1 = Review.new(customer1, restaurant1, 4, "wonderful place")
-review1 = Review.new(customer2, restaurant2, 5, "best ever")
+review1 = Review.new(customer1, restaurant1, 4.5, "wonderful place")
+review2 = Review.new(customer2, restaurant2, 6.5, "best ever")
+review3 = Review.new(customer1, restaurant2, 6.5, "best ever again")
+#review4 = Review.new(customer1, restaurant2, 6.5, "best ever again")
+
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line

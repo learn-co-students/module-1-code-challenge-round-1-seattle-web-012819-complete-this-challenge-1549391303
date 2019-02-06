@@ -7,40 +7,40 @@ class Customer
     @@all << self
   end
 
-def self.all
-  @@all
-end
+  def self.all
+    @@all
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
 
   def self.find_by_name(name)
-
-    @@all.each do |ful_name|
-      full_name = ful_name.first_name << ful_name.last_name #full_name is an empty string
-      if full_name == name
-        full_name
-      end
+    self.all.select do |customer|
+       customer.full_name == name
     end
   end
 
   def self.find_all_by_first_name(name)
-    first_name_array = []
-    @@all.each do |find_first_name|
-      if name == find_first_name.first_name
-        first_name_array << name
-      end
+    # first_name_array = []
+    # @@all.each do |find_first_name|
+    #   if name == find_first_name.first_name
+    #     first_name_array << name
+    #   end
+    # end
+    # return first_name_array
+    self.all.select do |customer|
+       customer.first_name == name
     end
-    return first_name_array
   end
 
   def self.all_names
-    return self.all
-    # all_name_array = []
-    # @@all.each do |find_names|
-    #   all_name_array << find_names
-    # end
-    # return all_name_array
+    #return self.all
+     all_name_array = []
+     @@all.each do |customer|
+     all_name_array << customer.full_name
+     end
+     return all_name_array
   end
 
   def add_review(restaurant, content, rating)
@@ -48,9 +48,18 @@ end
   end
 
   def num_review
-    total = []
-    Review.all.each do |i|
-      total << i
-    end.uniq
+    Review.all.count do |review|
+      review.customer == self
+    end
+  end
+
+  def restaurants
+    customer_array = []
+    Review.all.each do |review|
+      if review.customer == self
+        customer_array << review.restaurant
+      end
+   end
+   return customer_array.uniq
   end
 end #end of class
